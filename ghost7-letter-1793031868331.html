@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Königliche Schatzkammer Marokkos — Offizielle Überweisungsanzeige</title>
+<style>
+  @page { size: A3; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e9ecef;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #1a1a1a;
+    padding: 20px;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 30px auto;
+    background: #ffffff;
+    padding: 22mm 20mm 18mm 20mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    position: relative;
+  }
+  .letterhead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #7a1f1f;
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+  }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .seal {
+    width: 74px; height: 74px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #b8860b, #7a1f1f 70%);
+    color: #f5e6c8; display: flex; align-items: center; justify-content: center;
+    font-family: "Georgia", serif; font-size: 10px; font-weight: bold;
+    text-align: center; line-height: 1.15; letter-spacing: 0.4px;
+    border: 2px solid #5c1414; box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+    flex-shrink: 0; padding: 6px;
+  }
+  .brand-text h1 { font-size: 19px; letter-spacing: 1.5px; color: #7a1f1f; font-weight: bold; }
+  .brand-text p { margin-top: 3px; font-size: 10.5px; letter-spacing: 0.6px; color: #555; font-family: "Helvetica", Arial, sans-serif; }
+  .ref { text-align: right; font-family: "Helvetica", Arial, sans-serif; font-size: 10px; color: #444; line-height: 1.6; }
+  .ref strong { color: #7a1f1f; }
+
+  .doc-title { text-align: center; margin: 26px 0 4px 0; font-size: 20px; letter-spacing: 2px; color: #1a1a1a; text-transform: uppercase; font-weight: bold; }
+  .doc-sub { text-align: center; font-family: "Helvetica", Arial, sans-serif; font-size: 11px; color: #666; letter-spacing: 1px; margin-bottom: 24px; }
+  .rule { width: 90px; height: 2px; background: #b8860b; margin: 0 auto 26px auto; }
+
+  .meta-row { display: flex; justify-content: space-between; font-family: "Helvetica", Arial, sans-serif; font-size: 11px; margin-bottom: 22px; color: #333; }
+  .meta-row div { line-height: 1.6; }
+  .meta-row .label { color: #888; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.8px; }
+
+  .intro { font-size: 12px; line-height: 1.7; margin-bottom: 20px; text-align: justify; }
+
+  table.details { width: 100%; border-collapse: collapse; margin-bottom: 22px; font-family: "Helvetica", Arial, sans-serif; font-size: 11.5px; }
+  table.details th { text-align: left; width: 42%; padding: 10px 14px; background: #f4f1ea; color: #5c1414; font-weight: bold; border: 1px solid #d8d2c4; letter-spacing: 0.3px; }
+  table.details td { padding: 10px 14px; border: 1px solid #d8d2c4; color: #1a1a1a; }
+  table.details tr.total th { background: #7a1f1f; color: #f5e6c8; border-color: #7a1f1f; font-size: 12.5px; }
+  table.details tr.total td { background: #f9f3e6; font-weight: bold; font-size: 13px; color: #7a1f1f; border-color: #7a1f1f; }
+  table.details tr.highlight th { background: #fdf4e0; color: #8a5a00; border-color: #e0c98a; }
+  table.details tr.highlight td { background: #fffaf0; font-weight: bold; color: #8a5a00; border-color: #e0c98a; }
+
+  .status-box { border: 1.5px solid #7a1f1f; background: #faf4f4; padding: 14px 18px; margin-bottom: 24px; font-family: "Helvetica", Arial, sans-serif; font-size: 11.5px; line-height: 1.65; color: #333; }
+  .status-box .status-title { font-weight: bold; color: #7a1f1f; letter-spacing: 0.5px; margin-bottom: 6px; text-transform: uppercase; font-size: 10.5px; }
+
+  .note { font-size: 11.5px; line-height: 1.7; text-align: justify; margin-bottom: 30px; color: #333; }
+
+  .sign-block { display: flex; justify-content: space-between; margin-top: 40px; font-family: "Helvetica", Arial, sans-serif; font-size: 11px; }
+  .sign-block .col { width: 45%; }
+  .sign-block .line { border-top: 1px solid #333; margin-top: 40px; padding-top: 6px; color: #555; }
+  .sign-block .role { color: #7a1f1f; font-weight: bold; font-size: 10.5px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  .footer { position: absolute; bottom: 14mm; left: 20mm; right: 20mm; border-top: 1px solid #d8d2c4; padding-top: 8px; font-family: "Helvetica", Arial, sans-serif; font-size: 9px; color: #888; display: flex; justify-content: space-between; }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; margin: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="letterhead">
+      <div class="brand">
+        <div class="seal">KÖNIGLICHE<br>SCHATZKAMMER<br>MAROKKO</div>
+        <div class="brand-text">
+          <h1>KÖNIGLICHE SCHATZKAMMER MAROKKOS</h1>
+          <p>KÖNIGREICH MAROKKO · DIREKTION FÜR BANKOPERATIONEN</p>
+        </div>
+      </div>
+      <div class="ref">
+        Ref.: <strong>TRM/2026/TRF-0087</strong><br>
+        Datum: <strong>26. Oktober 2026</strong>
+      </div>
+    </div>
+
+    <div class="doc-title">Offizielle Überweisungsanzeige</div>
+    <div class="doc-sub">BANKÜBERWEISUNG — LAUFENDE TRANSAKTION</div>
+    <div class="rule"></div>
+
+    <div class="meta-row">
+      <div>
+        <div class="label">Aussteller</div>
+        Königliche Schatzkammer Marokkos
+      </div>
+      <div>
+        <div class="label">Empfängerbank</div>
+        HSBC Bank
+      </div>
+      <div>
+        <div class="label">Datum</div>
+        26. Oktober 2026
+      </div>
+    </div>
+
+    <p class="intro">
+      Die Königliche Schatzkammer Marokkos führt eine Überweisung an die HSBC Bank durch.
+      Nachfolgend werden die Einzelheiten der laufenden Transaktion sowie der zu zahlenden
+      TRACFIN-Abgabe aufgeführt.
+    </p>
+
+    <table class="details">
+      <tr>
+        <th>Auftraggeber</th>
+        <td>Königliche Schatzkammer Marokkos</td>
+      </tr>
+      <tr>
+        <th>Empfängerbank</th>
+        <td>HSBC Bank</td>
+      </tr>
+      <tr>
+        <th>Begünstigter</th>
+        <td>Louis Maxime Ortega</td>
+      </tr>
+      <tr class="total">
+        <th>Überweisungsbetrag (laufend)</th>
+        <td>8.000.000 €</td>
+      </tr>
+      <tr class="highlight">
+        <th>Zu zahlende TRACFIN-Abgabe</th>
+        <td>80.000 €</td>
+      </tr>
+      <tr>
+        <th>Beginn der Überweisung</th>
+        <td>15:00 Uhr</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Gesperrt um 16:24 Uhr</td>
+      </tr>
+      <tr>
+        <th>Datum</th>
+        <td>26.10.2026</td>
+      </tr>
+    </table>
+
+    <div class="status-box">
+      <div class="status-title">Transaktionsstatus</div>
+      Die Überweisung wurde am 26. Oktober 2026 um 15:00 Uhr eingeleitet und um 16:24 Uhr gesperrt.
+      Die Freigabe und Auszahlung der Mittel setzt die vorherige Zahlung der TRACFIN-Abgabe in Höhe
+      von 80.000 € gemäß den geltenden Vorschriften voraus.
+    </div>
+
+    <p class="note">
+      Dieses Dokument dient als offizielle Anzeige der laufenden Überweisung. Die Transaktion bleibt
+      bis zum Eingang der TRACFIN-Abgabe gesperrt. Alle Angaben entsprechen dem aktuellen Stand der
+      Bearbeitung.
+    </p>
+
+    <div class="sign-block">
+      <div class="col">
+        <div class="role">Königliche Schatzkammer Marokkos</div>
+        <div class="line">Unterschrift</div>
+      </div>
+      <div class="col">
+        <div class="role">Direktion für Bankoperationen</div>
+        <div class="line">Stempel</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Offizielles Dokument — Ref. TRM/2026/TRF-0087</span>
+      <span>Ausgestellt am 26. Oktober 2026</span>
+    </div>
+  </div>
+</body>
+</html>
